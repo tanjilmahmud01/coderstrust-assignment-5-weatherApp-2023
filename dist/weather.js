@@ -5,12 +5,19 @@ const fetchWeather = async (city) => {
 
   const res = await fetch(API);
   const data = await res.json();
-
   showWeather(data);
 };
 
 const showWeather = (data) => {
-  console.log(data.sys.sunrise);
+  console.log(data);
+
+  const sunriseDateObj = new Date(data.sys.sunrise * 1000);
+  const sunsetDateObj = new Date(data.sys.sunset * 1000);
+  const sunrise = sunriseDateObj.toLocaleTimeString();
+  const sunset = sunsetDateObj.toLocaleTimeString();
+
+  console.log(sunrise, sunset);
+
   const cityName = data.name;
   const countryCode = data.sys.country;
   const temperature = (data.main.temp - 273.15).toFixed(2);
@@ -26,6 +33,8 @@ const showWeather = (data) => {
   document.getElementById("temp-feels-like").innerText = temperatureFeelsLike;
   document.getElementById("weatherCondition").innerText = weatherCondition;
   document.getElementById("weatherIcon").setAttribute("src", `${weatherIcon}`);
+  document.getElementById("sunrise").innerText = sunrise;
+  document.getElementById("sunset").innerText = sunset;
 };
 
 const getWeather = () => {

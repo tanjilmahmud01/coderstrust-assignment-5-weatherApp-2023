@@ -1,70 +1,99 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="cupcake">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
     
-  <link rel="stylesheet" href="/assets/index-68d9e5d5.css">
-</head>
+    <link rel="stylesheet" href="/assets/index-11d58203.css">
+  </head>
 
-<body>
-
+  <body>
     <header>
       <h1 class="text-4xl text-center m-20">Welcome to Weather App!</h1>
     </header>
 
     <section class="flex justify-center">
-        <div class="form-control w-full max-w-xs ">
-            <label class="label">
-              <span class="label-text text-xl">Enter the Name of the City</span>
-
-              
-            </label>
-            <input name="city" id="citySearch" type="text" placeholder="Type City Name" class="input input-bordered w-full max-w-xs" />
-            <button id="searchbtn" class="btn btn-accent mt-5 w-1/2">Search Weather</button>
-          </div>
-
+      <div class="form-control w-full max-w-xs">
+        <label class="label">
+          <span class="label-text text-xl">Enter the Name of the City</span>
+        </label>
+        <input
+          name="city"
+          id="citySearch"
+          type="text"
+          placeholder="Type City Name"
+          class="input input-bordered w-full max-w-xs"
+        />
+        <button id="searchbtn" class="btn btn-accent mt-5 w-1/2">
+          Search Weather
+        </button>
+      </div>
     </section>
 
     <section class="flex justify-center mt-7 mb-20">
-        <div id="weatherCard"  class=" card w-96 bg-base-100 shadow-xl">
-            <figure><img id="day-night-img" src="/assets/pexels-tahir-shaw-186980-cd314670.jpg" alt="weather" /></figure>
-            <div class="card-body">
-
-              <div class="flex justify-between">
-                <div class="flex items-center gap-2 ">
-                  <h2 id="cityName" class="card-title">
-                      
-                    </h2>
-                    <div id="countryCode" class="badge badge-secondary"></div>
-              </div>
-
-              <div class="flex items-center ">
-                <h2 id="weatherCondition" class="card-title">
-                    
-                  </h2>
-                  <div class="">
-                    <img class="h-10" id="weatherIcon" src="" alt="weather icon">
-                  </div>
+      <div id="weatherCard" class="card w-96 bg-base-100 shadow-xl">
+        <figure>
+          <img
+            id="day-night-img"
+            src="/assets/pexels-tahir-shaw-186980-cd314670.jpg"
+            alt="weather"
+          />
+        </figure>
+        <div class="card-body">
+          <div class="flex justify-between">
+            <div class="flex items-center gap-2">
+              <h2 id="cityName" class="card-title"></h2>
+              <div id="countryCode" class="badge badge-secondary"></div>
             </div>
+
+            <div class="flex items-center">
+              <h2 id="weatherCondition" class="card-title"></h2>
+              <div class="">
+                <img class="h-10" id="weatherIcon" src="" alt="weather icon" />
               </div>
-              
-              <p class="text-2xl font-semibold"><span id="temp-real"></span>&deg;C</p>
+            </div>
+          </div>
 
-              <p class=" font-semibold">Feels Like <span id="temp-feels-like"></span>&deg;C</p>
+          <p class="text-2xl font-semibold">
+            <span id="temp-real"></span>&deg;C
+          </p>
 
-              <!-- <div class="card-actions justify-end">
+          <p class="font-semibold">
+            Feels Like <span id="temp-feels-like"></span>&deg;C
+          </p>
+
+          <!-- <div class="card-actions justify-end">
                 <div class="badge badge-outline">Fashion</div> 
                 <div class="badge badge-outline">Products</div>
               </div> -->
 
+          <div class="flex items-center justify-between mt-2 p-2">
+            <div class="flex items-center gap-1">
+              <img
+                height="50px"
+                width="50px"
+                src="/assets/sunrise-90bdcbc6.png"
+                alt="sunrise-icon"
+              />
+              <span id="sunrise">Sunrise</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <img
+                height="50px"
+                width="50px"
+                src="/assets/sunset-8263f7c8.png"
+                alt="sunset-icon"
+              />
+              <span id="sunset">Sunset</span>
             </div>
           </div>
+          <p class="text-center">Time as Bangladesh Local Time (GMT +6)</p>
+        </div>
+      </div>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="./weather.js"></script>
-</body>
-
+  </body>
 </html>
